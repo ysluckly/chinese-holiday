@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/ysliving/chinese-holidays/holidays"
+	"github.com/ysliving/chinese-holiday/holidays"
 )
 
 // 测试
