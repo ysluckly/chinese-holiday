@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"os"
 
-	_ "github.com/bastengao/chinese-holidays-go/holidays/statik" // load data
+	_ "github.com/ysliving/chinese-holidays/holidays/statik" // load data
 	"github.com/rakyll/statik/fs"
 )
 

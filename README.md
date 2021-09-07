@@ -2,26 +2,32 @@
 
 ![badge](https://github.com/bastengao/chinese-holidays-go/workflows/Go/badge.svg)
 
-提供具有中国特色的休假安排或者工作日查询。
+##### 提供具有中国特色的休假安排或者工作日查询。
 
 ## Install
 
-    go get github.com/bastengao/chinese-holidays-go
+    go get github.com/ysliving/chinese_holidy
 
 ## Usage
 
 ```go
 import (
-    "github.com/bastengao/chinese-holidays-go/holidays"
+    "github.com/ysliving/chinese_holidy/holidays"
 )
 
-d := time.Date(2019, 10, 1, 0, 0, 0, 0, china)
-holidays.isHoliday(d)    // true
-holidays.isWorkingday(d) // false
+func main{
+    d := time.Date(2019, 10, 1, 0, 0, 0, 0, china)
+    dStr := "2019-10-01 00:00:00"
+    holidays.IsHoliday(d)    // true
+    holidays.IsWorkingday(d) // false
+    holidays.GetTNthWorkingDay(d,3) // 距d的第三个工作日（time param）
+    holidays.GetSNthWorkingDay(dStr,3) // 距d的第三个工作日（string param）   
+    return
+}
 ```
 
 ## Features
-
+> [假期政策查询](http://www.gov.cn/zhengce/zuixin.htm)
 - [x] bundled data
   - support [2021](http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm)
   - support [2020](http://www.gov.cn/zhengce/content/2019-11/21/content_5454164.htm)
@@ -30,3 +36,9 @@ holidays.isWorkingday(d) // false
   - support [2017](http://www.gov.cn/zhengce/content/2016-12/01/content_5141603.htm)
   - support 2016
 - [ ] online data
+
+## Other
+```c
+json -> 二进制命令 eg： statik -src=./data
+```
+详见：[statik命令使用](http://blog.fatedier.com/2016/08/01/compile-assets-into-binary-file-with-statik-in-golang/)

@@ -42,6 +42,14 @@ func (b book) isWorkingday(d time.Time) bool {
 	return e.isWorkingday()
 }
 
+func (b book) getTNthWorkingDay(date time.Time, Nth int32) (time.Time, error) {
+	return GetTNthWorkingDay(date, Nth)
+}
+
+func (b book) getSNthWorkingDay(dateStr string, Nth int32) (time.Time, error) {
+	return GetSNthWorkingDay(dateStr, Nth)
+}
+
 func (b book) findEvent(d time.Time) *event {
 	e, ok := b.index[_key(d)]
 	if !ok {

@@ -1,5 +1,5 @@
-module github.com/bastengao/chinese-holidays-go
+module github.com/ysliving/chinese-holidays
 
-go 1.12
+go 1.14
 
-require github.com/rakyll/statik v0.1.6
+require github.com/rakyll/statik v0.1.7 // indirect
