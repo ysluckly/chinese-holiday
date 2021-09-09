@@ -24,7 +24,7 @@ func main{
     holidays.GetSNthWorkingDay(dStr,3) // 距d的第三个工作日（string param）   
     return
 }
-```a
+```
 
 ## Features
 > [假期政策查询](http://www.gov.cn/zhengce/zuixin.htm)
