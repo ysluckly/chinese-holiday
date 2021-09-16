@@ -6,13 +6,13 @@
 
 ## Install
 
-    go get github.com/ysliving/chinese-holiday
+    go get github.com/ysluckly/chinese-holiday
 
 ## Usage
 
 ```go
 import (
-    "github.com/ysliving/chinese-holiday/holidays"
+    "github.com/ysluckly/chinese-holiday/holidays"
 )
 
 func main{
