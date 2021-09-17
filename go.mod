@@ -1,4 +1,4 @@
-module github.com/ysliving/chinese-holiday
+module github.com/ysluckly/chinese-holiday
 
 go 1.14
 
