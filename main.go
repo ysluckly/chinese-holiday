@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ysliving/chinese-holiday/holidays"
+	"github.com/ysluckly/chinese-holiday/holidays"
 )
 
 // 测试
