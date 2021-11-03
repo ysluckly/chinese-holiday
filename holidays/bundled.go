@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"os"
 
-	_ "github.com/ysluckly/chinese-holiday/statik" // load data
 	"github.com/rakyll/statik/fs"
+	_ "github.com/ysluckly/chinese-holiday/statik" // load data
 )
 
 func loadData() ([]event, error) {

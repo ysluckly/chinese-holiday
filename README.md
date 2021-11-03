@@ -6,16 +6,16 @@
 
 ## Install
 
-    go get github.com/ysluckly/chinese-holiday
+    go get github.com/ysliving/chinese-holiday
 
 ## Usage
 
 ```go
+package main
 import (
-    "github.com/ysluckly/chinese-holiday/holidays"
+    "github.com/ysliving/chinese-holiday/holidays"
 )
-
-func main{
+func main(){
     d := time.Date(2019, 10, 1, 0, 0, 0, 0, china)
     dStr := "2019-10-01 00:00:00"
     holidays.IsHoliday(d)    // true
@@ -29,6 +29,7 @@ func main{
 ## Features
 > [假期政策查询](http://www.gov.cn/zhengce/zuixin.htm)
 - [x] bundled data
+  - support [2022](http://www.gov.cn/zhengce/content/2021-10/25/content_5644835.htm)
   - support [2021](http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm)
   - support [2020](http://www.gov.cn/zhengce/content/2019-11/21/content_5454164.htm)
   - support [2019](http://www.gov.cn/zhengce/content/2018-12/06/content_5346276.htm) and 5.1 [changes](http://www.gov.cn/zhengce/content/2019-03/22/content_5375877.htm)
@@ -39,6 +40,7 @@ func main{
 
 ## Other
 ```c
-json -> 二进制命令 eg： statik -src=./data
+json -> 二进制 
+命令 eg： statik -src=./data(重写: -f)
 ```
 详见：[statik命令使用](http://blog.fatedier.com/2016/08/01/compile-assets-into-binary-file-with-statik-in-golang/)

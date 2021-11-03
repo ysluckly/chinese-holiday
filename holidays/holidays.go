@@ -5,9 +5,13 @@ import (
 	"errors"
 	"fmt"
 	"time"
+
+	"github.com/ysluckly/chinese-holiday/tool"
 )
 
 var b *book
+
+const MAXCOUNT = 20 // 防止死循环
 
 func init() {
 	events, err := loadData()
@@ -57,9 +61,31 @@ func GetTNthWorkingDay(date time.Time, Nth int32) (time.Time, error) {
 	if Nth <= 0 {
 		return date, errors.New("not support such Nth")
 	}
+	// 寻找第一个工作日,避免在节假日开始计算,倒数日不准确
+	isHoliday := b.isHoliday(date)
+	tmpAdd, tmpDate := int(0), date
+	if isHoliday {
+		for {
+			if tmpAdd > MAXCOUNT {
+				return date, errors.New("over the MAXCOUNT")
+			}
+			// 寻找第一个工作日
+			tmpAdd++
+			curDate := tmpDate.AddDate(0, 0, tmpAdd)
+			isWork := b.isWorkingday(curDate)
+			if isWork {
+				// 获取当日凌晨
+				date = tool.GetBeforeDawnOfDate(curDate)
+				break
+			}
+		}
+	}
 	// Countdown days、the number of days to be added counter（倒计时天数、需新增的天数计数器）
 	countNth, needAddNth := int(0), int(0)
 	for {
+		if needAddNth > MAXCOUNT {
+			return date, errors.New("over the MAXCOUNT")
+		}
 		if int32(countNth) == Nth {
 			break
 		}
