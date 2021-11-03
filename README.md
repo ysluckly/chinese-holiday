@@ -6,14 +6,14 @@
 
 ## Install
 
-    go get github.com/ysliving/chinese-holiday
+    go get github.com/ysluckly/chinese-holiday
 
 ## Usage
 
 ```go
 package main
 import (
-    "github.com/ysliving/chinese-holiday/holidays"
+    "github.com/ysluckly/chinese-holiday/holidays"
 )
 func main(){
     d := time.Date(2019, 10, 1, 0, 0, 0, 0, china)
