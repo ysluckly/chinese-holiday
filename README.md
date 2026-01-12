@@ -2,7 +2,7 @@
 
 ![badge](https://github.com/bastengao/chinese-holidays-go/workflows/Go/badge.svg)
 
-##### 提供具有中国特色的休假安排或者工作日查询。
+##### 提供具有中国特色(元旦、春节、清明、劳动节、端午、中秋、国庆节)的休假安排或者工作日查询。
 
 ## Install
 
