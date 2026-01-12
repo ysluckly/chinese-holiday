@@ -27,6 +27,15 @@ func (e event) isHoliday() bool {
 	return e.Type == typeHoliday
 }
 
+func (e event) isHolidayName() (bool, string) {
+	isHoliday := e.Type == typeHoliday
+	if isHoliday {
+		return isHoliday, e.Name
+	}
+
+	return isHoliday, ""
+}
+
 func (e event) isWorkingday() bool {
 	return e.Type == typeWorkingday
 }

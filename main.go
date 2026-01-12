@@ -15,6 +15,9 @@ func main() {
 	// 是否是工作日
 	isWorkDay, _ := holidays.IsWorkingDay(time.Now().Add(6 * 24 * time.Hour))
 
-	fmt.Println(result, isHoliday, isWorkDay)
+	d := time.Date(2026, 9, 20, 0, 0, 0, 0, time.Local)
+	result1, name, _ := holidays.IsHolidayAndGetTraditionName(d)
+
+	fmt.Println(result, isHoliday, isWorkDay, result1, name)
 	return
 }

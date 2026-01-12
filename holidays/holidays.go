@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ysluckly/chinese-holiday/tool"
+	tool "github.com/ysluckly/chinese-holiday/tool"
 )
 
 var b *book
@@ -35,6 +35,16 @@ func IsHoliday(date time.Time) (bool, error) {
 	}
 
 	return b.isHoliday(date), nil
+}
+
+func IsHolidayAndGetTraditionName(date time.Time) (bool, string, error) {
+	err := checkInitBook()
+	if err != nil {
+		return false, "", err
+	}
+
+	isHoliday, holidayName := b.isHolidayAndGetTraditionName(date)
+	return isHoliday, holidayName, nil
 }
 
 // IsWorkingDay checks given date is working day or not.

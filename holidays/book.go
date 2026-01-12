@@ -32,6 +32,16 @@ func (b book) isHoliday(d time.Time) bool {
 	return e.isHoliday()
 }
 
+func (b book) isHolidayAndGetTraditionName(d time.Time) (bool, string) {
+	e := b.findEvent(d)
+
+	if e == nil {
+		return isWeekend(d), ""
+	}
+
+	return e.isHolidayName()
+}
+
 func (b book) isWorkingday(d time.Time) bool {
 	e := b.findEvent(d)
 
