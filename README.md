@@ -21,7 +21,8 @@ func main(){
     holidays.IsHoliday(d)    // true
     holidays.IsWorkingday(d) // false
     holidays.GetTNthWorkingDay(d,3) // 距d的第三个工作日（time param）
-    holidays.GetSNthWorkingDay(dStr,3) // 距d的第三个工作日（string param）   
+    holidays.GetSNthWorkingDay(dStr,3) // 距d的第三个工作日（string param）
+    holidays.IsHolidayAndGetTraditionName(d) // true 劳动节
     return
 }
 ```
