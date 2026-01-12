@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// 距离当前日期的第N工作日
-	result, _ := holidays.GetSNthWorkingDay("2022-10-06 05:00:00", 3)
+	result, _ := holidays.GetSNthWorkingDay("2026-10-06 05:00:00", 3)
 	// 是否是节假日
 	isHoliday, _ := holidays.IsHoliday(time.Now())
 	// 是否是工作日

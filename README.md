@@ -16,8 +16,8 @@ import (
     "github.com/ysluckly/chinese-holiday/holidays"
 )
 func main(){
-    d := time.Date(2019, 10, 1, 0, 0, 0, 0, china)
-    dStr := "2019-10-01 00:00:00"
+    d := time.Date(2026, 10, 1, 0, 0, 0, 0, china)
+    dStr := "2026-10-01 00:00:00"
     holidays.IsHoliday(d)    // true
     holidays.IsWorkingday(d) // false
     holidays.GetTNthWorkingDay(d,3) // 距d的第三个工作日（time param）
@@ -29,6 +29,10 @@ func main(){
 ## Features
 > [假期政策查询](http://www.gov.cn/zhengce/zuixin.htm)
 - [x] bundled data
+  - support 2026
+  - support 2025
+  - support 2024
+  - support 2023
   - support [2022](http://www.gov.cn/zhengce/content/2021-10/25/content_5644835.htm)
   - support [2021](http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm)
   - support [2020](http://www.gov.cn/zhengce/content/2019-11/21/content_5454164.htm)
